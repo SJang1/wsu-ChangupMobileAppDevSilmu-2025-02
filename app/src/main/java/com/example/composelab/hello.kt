@@ -6,7 +6,7 @@ fun main() {
     fun sum(no: Int): Int {
         var sum = 0
         for (i in 1..no) {
-            sum += 1
+            sum += i
         }
         return sum
     }
