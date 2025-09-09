@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
 }
 
 class CounterViewModel : ViewModel() {
-    private val _randomNumber = mutableIntStateOf(0)
+    private val _randomNumber = mutableIntStateOf(-1)
     val randomNumber: State<Int> = _randomNumber
 
     fun generateRandomNumber() {
@@ -62,7 +62,11 @@ fun Counter(modifier: Modifier = Modifier, viewModel: CounterViewModel = Counter
         Button(
             onClick = { viewModel.generateRandomNumber() }, // Call ViewModel function
         ) {
-            Text("Number: $randomNumber")
+            if(randomNumber == -1) {
+                Text("Generate Random Number")
+            } else {
+                Text("Number: $randomNumber")
+            }
         }
     }
 }
