@@ -18,7 +18,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.a0916.ui.theme._0916Theme
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
 import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
@@ -47,6 +49,10 @@ fun HomeScreen() {
                 .padding(16.dp)
         )
         Text("위치: 우송대 정문 앞")
+        Row {
+            Button(onClick = {}) { Text("처음 버튼") }
+            Button(onClick = {}) { Text("다른 버튼") }
+        }
     }
 }
 
