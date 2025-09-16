@@ -37,19 +37,20 @@ fun 조건문() {
         println("1부터 9까지의 숫자를 입력해주세요.")
     } else {
         when (n) {
-            1 -> menuGuestInfo(userName, userMobile)
-            2 -> menuCartItemList()
-            3 -> menuCartClear()
-            4 -> menuCartAddItem(mBook)
-            5 -> menuCartRemoveItemCount()
-            6 -> menuCartRemoveItem()
-            7 -> menuCartBill()
+            1 -> null//menuGuestInfo(userName, userMobile)
+            2 -> null//menuCartItemList()
+            3 -> null//menuCartClear()
+            4 -> null//menuCartAddItem(mBook)
+            5 -> null//menuCartRemoveItemCount()
+            6 -> null//menuCartRemoveItem()
+            7 -> null//menuCartBill()
             8 -> {
-                menuExit()
-                quit = true
+                null
+                //menuExit()
+                //quit = true
             }
 
-            9 -> menuAdminLogin()
+            9 -> null//menuAdminLogin()
         }
     }
 }
