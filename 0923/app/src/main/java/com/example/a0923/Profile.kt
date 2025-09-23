@@ -1,10 +1,12 @@
 package com.example.a0923
 
 import android.content.res.Configuration
+import android.view.Surface
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -12,6 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,16 +25,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.a0923.ui.theme._0923Theme
 
-
 data class Profile(val name: String = "김세진", val intro: String = "알 수 없는 개발자스러운 무언가")
 
 @Composable
-fun ProfileCard(data: Profile) {
-    OutlinedCard() {
-        Row(
-            modifier = Modifier.padding(all = 8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
+fun ProfileCardScreen(data: Profile) {
+    Surface(modifier = Modifier
+        .fillMaxSize()
+        .padding(top = 30.dp)) {
+        Row() {
             Image(
                 painter = painterResource(R.drawable.pfp),
                 contentDescription = "연락처 프로필 사진",
@@ -53,6 +54,7 @@ fun ProfileCard(data: Profile) {
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
+
         }
     }
 }
@@ -66,7 +68,7 @@ fun ProfileCard(data: Profile) {
 @Composable
 fun PreviewProfileCard() {
     _0923Theme {
-        ProfileCard(Profile())
+        ProfileCardScreen(Profile())
     }
 }
 
@@ -79,6 +81,8 @@ fun PreviewProfileCard() {
 @Composable
 fun PreviewProfileCardDark() {
     _0923Theme {
-        ProfileCard(Profile())
+        ProfileCardScreen(Profile())
     }
 }
+
+
